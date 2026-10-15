@@ -1,0 +1,343 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+@layer base {
+  body {
+    background-color: #fafafa;
+    color: #171717;
+    font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Geist', 'Inter', sans-serif;
+    color: #171717;
+    font-weight: 600;
+  }
+}
+
+/* Accessible, High-Contrast Scrollbar (Easy to see and drag on all devices) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 6px;
+  border: 2px solid #f1f5f9;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Utility for horizontal and nested scroll containers */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  border: 1px solid #f1f5f9;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Geist Typography Utilities */
+.display-xl {
+  font-family: 'Geist', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -2.4px;
+}
+
+.heading-lg {
+  font-family: 'Geist', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -1.28px;
+}
+
+.heading-md {
+  font-family: 'Geist', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.4px;
+}
+
+.label-sm {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+}
+
+.mono-eyebrow {
+  font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.body-lg {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #4d4d4d;
+}
+
+.body-md {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #4d4d4d;
+}
+
+.body-sm {
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #8f8f8f;
+}
+
+/* Vercel Hero Multi-Stop Mesh Gradient */
+.geist-hero-mesh {
+  background-color: #fafafa;
+  background-image: 
+    radial-gradient(at 15% 20%, rgba(80, 227, 194, 0.28) 0px, transparent 55%),
+    radial-gradient(at 85% 15%, rgba(0, 124, 240, 0.25) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(121, 40, 202, 0.18) 0px, transparent 60%),
+    radial-gradient(at 80% 85%, rgba(235, 54, 127, 0.20) 0px, transparent 55%),
+    radial-gradient(at 20% 80%, rgba(249, 203, 40, 0.22) 0px, transparent 50%);
+}
+
+.geist-hero-glow {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(0, 112, 243, 0.18) 0%, rgba(121, 40, 202, 0.14) 35%, rgba(255, 0, 128, 0.10) 65%, rgba(249, 203, 40, 0.06) 80%, transparent 100%);
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hairline Card Utilities */
+.geist-card {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.geist-card-hover {
+  transition: all 0.2s ease;
+}
+.geist-card-hover:hover {
+  border-color: #d4d4d4;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.06);
+}
+
+.geist-card-elevated {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+}
+
+/* Button Presets */
+.btn-marketing-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #171717;
+  color: #ffffff;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 15px;
+  height: 42px;
+  padding: 0 20px;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+.btn-marketing-primary:hover {
+  background-color: #2e2e2e;
+  transform: translateY(-0.5px);
+}
+
+.btn-marketing-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #171717;
+  border: 1px solid #ebebeb;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 15px;
+  height: 42px;
+  padding: 0 20px;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.btn-marketing-secondary:hover {
+  background-color: #fafafa;
+  border-color: #d4d4d4;
+}
+
+.btn-app-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  height: 32px;
+  padding: 0 12px;
+  transition: all 0.15s ease;
+}
+
+.btn-app-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #171717;
+  border: 1px solid #ebebeb;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  height: 32px;
+  padding: 0 12px;
+  transition: all 0.15s ease;
+}
+.btn-app-ghost:hover {
+  background-color: #fafafa;
+  border-color: #d4d4d4;
+}
+
+/* GPU Accelerated Map State Path Transitions */
+.map-state-path {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: fill 180ms ease-out, opacity 180ms ease-out, stroke 180ms ease-out, stroke-width 180ms ease-out;
+}
+
+/* Subtle Risk Pulse Ring for High-Risk States */
+@keyframes riskPulseRing {
+  0% {
+    r: 4px;
+    opacity: 0.85;
+    stroke-width: 2px;
+  }
+  70% {
+    r: 16px;
+    opacity: 0;
+    stroke-width: 1px;
+  }
+  100% {
+    r: 16px;
+    opacity: 0;
+    stroke-width: 0;
+  }
+}
+
+.animate-risk-pulse {
+  animation: riskPulseRing 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+/* Print layout for Official Executive PDF Dossiers */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  /* Expand modal container for seamless PDF printing */
+  .fixed.inset-0 {
+    position: static !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .max-w-5xl, .max-w-4xl {
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .dossier-print-area {
+    padding: 0 !important;
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* Prevent awkward page cuts in tables and metric cards */
+  table, tr, td, th, .border, .rounded-xl, .rounded-lg {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .geist-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+}
+
+
